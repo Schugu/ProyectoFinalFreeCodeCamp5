@@ -2,20 +2,130 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
     font-family: sans-serif;
+    background-color: var(--background_color);
 }
 
+/* VARIABLES */
+:root{
+    --background_color: #000020;
+    --background_color-light: #171a4a;
+    --background_color-lightx2: #171a4a;
+    --detallesContraste: #ff9800;
+    --detallesContraste-light: #ffcc50;
+}
+
+/* HEADER */
 .header__nav{
     position: fixed;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--background_color-light);
+}
+.header__nav a {
+    color: #fff;
 }
 
-
+/* MAIN */
 .main {
-    padding-top: 20px;
+    width: 100%;
+    background-color: var(--background_color);
 }
 
+/* PRESENTACIÓN */
 .welcome-section {
-    height: 100vh
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divTitleEtiqueta {
+    align-self: flex-start;
+    padding: 20px 0;
+    font-family: "Source Code Pro", monospace;
+    width: 100%;
+    font-size: 1.5em;
+}
+.etiquetaColor{
+    color: var(--detallesContraste-light);
+}
+.atributoColor {
+    color: var(--detallesContraste);
+}
+
+
+
+.welcomeInfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding-left: 50px;
+}
+.welcomeInfoImagen {
+    max-width: 12em;
+    max-height: 12em;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--detallesContraste-light);
+}
+.welcomeInfoImagen-img {
+    max-width: 12em;
+    max-height: 12em;
+    object-fit: cover;
+}
+
+
+
+
+.welcomeArticle__sectionInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.welcomeArticle__sectionInfo-h1 {
+    font-size: 1.8em;
+}
+.welcomeArticle__sectionInfo-h2 {
+    font-size: 1.3em;
+}
+
+.welcomeArticle__sectionInfo-botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.welcomeArticle__sectionInfo-botones a{
+    display: inline-flex;
+}
+.welcomeArticle__sectionInfo-botones-icono {
+    filter: invert(100%);
+    width: 2em;
+    height: 2.5em;
+}
+
+.welcomeArticle__sectionComa {
+    max-height: 100%;
+}
+.welcomeArticle__sectionComa-p {
+    font-size: 10em;
+    color: var(--detallesContraste);
+    display: inline-block;
+    margin-top: -20px;
 }
 
 
