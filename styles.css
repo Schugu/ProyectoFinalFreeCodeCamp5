@@ -34,29 +34,19 @@ body {
 .main {
     width: 100%;
     background-color: var(--background_color);
-}
-
-/* PRESENTACIÓN */
-.welcome-section {
-    height: 100vh;
-    width: 100%;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.welcome-article {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* ESTILO DE SEPARADORES */
 .divTitleEtiqueta {
     align-self: flex-start;
-    padding: 20px 0;
     font-family: "Source Code Pro", monospace;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    text-wrap: nowrap; 
+    /* SACAR ESTO DESP O CONFIGURAR BIEN */
 }
 .etiquetaColor{
     color: var(--detallesContraste-light);
@@ -66,30 +56,61 @@ body {
 }
 
 
+/* SECCION PRESENTACIÓN */
+.welcome-section {
+    height: 100vh;
+    width: 75%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease;
+}
+.welcome-article:hover{
+    box-shadow: 0 0 20px 5px var(--detallesContraste);
+}
 
+.welcomeInfoFlexRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 .welcomeInfo{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding-left: 50px;
+    width: 100%;
+    gap: 5vw; /* 30px*/
+    padding: 20px 0 20px 5vw;
 }
 .welcomeInfoImagen {
-    max-width: 12em;
-    max-height: 12em;
+    width: 20vw; /* 15em*/
+    height: 20vw; /* 15em*/
+    max-width: 100%;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--detallesContraste-light);
+    transition: box-shadow 0.2s ease;
+}
+.welcomeInfoImagen:hover{
+    box-shadow: 0 0 20px 5px var(--detallesContraste);
 }
 .welcomeInfoImagen-img {
-    max-width: 12em;
-    max-height: 12em;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    object-position: center center;
 }
-
-
-
-
 .welcomeArticle__sectionInfo {
     display: flex;
     flex-direction: column;
@@ -97,37 +118,65 @@ body {
     align-items: center;
 }
 .welcomeArticle__sectionInfo-h1 {
-    font-size: 1.8em;
+    font-size: 2.5vw; /* 2em*/
+    text-align: center;
 }
 .welcomeArticle__sectionInfo-h2 {
-    font-size: 1.3em;
+    font-size: 2vw; /* 1.5em*/
 }
-
+.welcomeArticle__sectionInfo-p {
+    font-size: 1.5vw; /* 1em*/
+}
 .welcomeArticle__sectionInfo-botones {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-.welcomeArticle__sectionInfo-botones a{
+.welcomeArticle__sectionInfo__botones-a{
     display: inline-flex;
+    
 }
 .welcomeArticle__sectionInfo-botones-icono {
     filter: invert(100%);
-    width: 2em;
-    height: 2.5em;
+    width: 3.5vw; /* 3em*/
+    height: 4vw; /* 3.5em*/
 }
-
+svg defs {
+    filter: url(#orange-filter);
+}
+.welcomeArticle__sectionInfo__botones-a:hover{
+    filter: url(#orange-filter);
+}
 .welcomeArticle__sectionComa {
-    max-height: 100%;
+    min-height: 100%;
+    width: auto;
+    margin: auto 0;
 }
 .welcomeArticle__sectionComa-p {
-    font-size: 10em;
+    font-size: 12vw; /* 10em*/
     color: var(--detallesContraste);
     display: inline-block;
-    margin-top: -20px;
 }
 
+/* SECCION PROYECTOS */
+/* .projects-section {
+    height: 100vh;
+    min-width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.projects-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 75%;
+    height: auto;
+} */
 
 
 
@@ -144,9 +193,96 @@ body {
 
 
 
-
-@media screen and (min-width: 800px) {
-    body {
-        background-color: white;
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px) {
+    .welcome-section {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 830px) {
+    .main{
+        padding-top: 60px;
+    }
+    .welcomeArticle__sectionInfo {
+        row-gap: 20px;
+    }
+    .divTitleEtiqueta {
+        font-size: 1em;
+    }
+    .welcomeInfoImagen {
+        width: 15em; /* 15em*/
+        height: 15em; /* 15em*/
+    }
+    .welcomeArticle__sectionInfo-h1 {
+        font-size: 2em; /* 2em*/
+    }
+    .welcomeArticle__sectionInfo-h2 {
+        font-size: 1.5em; /* 1.5em*/
+    }
+    .welcomeArticle__sectionInfo-p {
+        font-size: 1em; /* 1em*/
+    }
+    .welcomeArticle__sectionInfo-botones-icono {
+        width: 3em; /* 3em*/
+        height: 3.5em; /* 3.5em*/
+    }
+    .welcomeArticle__sectionComa-p {
+        font-size: 8em; /* 10em*/
+    }
+}
+@media screen and (max-width: 615px) {
+    .main{
+        padding-top: 0px;
+    }
+    .divTitleEtiqueta {
+        font-size: 0.5em;
+    }
+    .welcomeInfoImagen {
+        width: 12.5em; /* 15em*/
+        height: 12.5em; /* 15em*/
+    }
+    .welcomeArticle__sectionInfo-h1 {
+        font-size: 1.5em; /* 2em*/
+    }
+    .welcomeArticle__sectionInfo-h2 {
+        font-size: 1em; /* 1.5em*/
+    }
+    .welcomeArticle__sectionInfo-p {
+        font-size: 0.7em; /* 1em*/
+    }
+    .welcomeArticle__sectionInfo-botones-icono {
+        width: 2.5em; /* 3em*/
+        height: 3em; /* 3.5em*/
+    }
+    .welcomeArticle__sectionComa-p {
+        font-size: 6em; /* 10em*/
+    }
+}
+@media screen and (max-width: 400px) {
+    .welcome-section {
+        width: 95%;
+    }
+    .divTitleEtiqueta {
+        font-size: 0.5em;
+    }
+    .welcomeInfoImagen {
+        width: 12.5em; /* 15em*/
+        height: 12.5em; /* 15em*/
+    }
+    .welcomeArticle__sectionInfo-h1 {
+        font-size: 1.5em; /* 2em*/
+    }
+    .welcomeArticle__sectionInfo-h2 {
+        font-size: 1em; /* 1.5em*/
+    }
+    .welcomeArticle__sectionInfo-p {
+        font-size: 0.7em; /* 1em*/
+    }
+    .welcomeArticle__sectionInfo-botones-icono {
+        width: 2.5em; /* 3em*/
+        height: 3em; /* 3.5em*/
+    }
+    .welcomeArticle__sectionComa-p {
+        font-size: 6em; /* 10em*/
     }
 }
